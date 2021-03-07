@@ -20,7 +20,6 @@
       </h3>
     {/if}
     <h4>Ingredients:</h4>
-    {uri}
     <ul>
       {#each ingredientLines as ingredient}
         <li>
