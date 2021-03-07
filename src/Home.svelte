@@ -22,7 +22,6 @@
     fetch(`${API_URL}?app_id=${APP_ID}&app_key=${API_KEY}&q=${searchText}`)
       .then((response) => response.json())
       .then((response) => {
-        console.log(response);
         searchResults = response.hits;
       });
   }
