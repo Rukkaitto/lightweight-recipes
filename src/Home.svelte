@@ -8,6 +8,16 @@
   let searchText = "";
   let searchResults = [];
 
+  function handleClick() {
+    search();
+  }
+
+  function submit(event) {
+    if (event.key == "Enter") {
+      search();
+    }
+  }
+
   function search() {
     fetch(`${API_URL}?app_id=${APP_ID}&app_key=${API_KEY}&q=${searchText}`)
       .then((response) => response.json())
@@ -19,8 +29,13 @@
 </script>
 
 <main>
-  <input bind:value={searchText} type="text" placeholder="Search recipes..." />
-  <button on:click={search}>Search</button>
+  <input
+    bind:value={searchText}
+    type="text"
+    placeholder="Search recipes..."
+    on:keydown={submit}
+  />
+  <button on:click={handleClick}>Search</button>
 
   {#each searchResults as searchResult}
     <Recipe {...searchResult.recipe} />

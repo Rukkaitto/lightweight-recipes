@@ -1,12 +1,11 @@
 <script>
   import Router from "svelte-spa-router";
   import Home from "./Home.svelte";
-
-  const API_URL = "https://api.spoonacular.com/recipes/complexSearch";
-  const API_KEY = "6c144d0905ab4f17a33e32b01c86d9ea";
+  import RecipePage from "./RecipePage.svelte";
 
   const routes = {
     "/": Home,
+    "/recipe/:id": RecipePage,
   };
 </script>
 

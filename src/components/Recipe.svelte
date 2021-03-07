@@ -3,6 +3,9 @@
   export let label = "";
   export let totalTime = "";
   export let ingredientLines = [];
+  export let uri = "";
+
+  $: id = uri.split("_")[1];
 </script>
 
 <div id="recipe">
@@ -24,6 +27,7 @@
         </li>
       {/each}
     </ul>
+    <a href={`#/recipe/${id}`}>See recipe</a>
   </div>
 </div>
 
